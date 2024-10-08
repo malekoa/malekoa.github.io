@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on malekoa.com</title>
+    <link>https://malekoa.com/posts/</link>
+    <description>Recent content in Posts on malekoa.com</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Aug 2024 10:21:35 -0700</lastBuildDate>
+    <atom:link href="https://malekoa.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Case Study: UX/UI Design of a Travel Companion Super App</title>
+      <link>https://malekoa.com/posts/travel-companion-super-app/</link>
+      <pubDate>Fri, 16 Aug 2024 10:21:35 -0700</pubDate>
+      <guid>https://malekoa.com/posts/travel-companion-super-app/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;This post is related to an assignment for my SOEN 357 class.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Traveling is complicated. Figuring out how to get there, figuring out where to stay, and figuring out how to get around is tough. Some might even say it takes the joy out of traveling.&lt;/p&gt;&#xA;&lt;p&gt;The thing is, each of these problems have solutions. Services like &lt;a href=&#34;https://www.google.com/travel/flights&#34;&gt;Google Flights&lt;/a&gt; and &lt;a href=&#34;https://www.skyscanner.ca/&#34;&gt;Skyscanner&lt;/a&gt; exist for finding flights. &lt;a href=&#34;https://www.airbnb.ca/&#34;&gt;Airbnb&lt;/a&gt; and &lt;a href=&#34;https://www.vrbo.com/&#34;&gt;Vrbo&lt;/a&gt; can help you find a place to stay. Finally, services like &lt;a href=&#34;https://turo.com/ca/en&#34;&gt;Turo&lt;/a&gt; and &lt;a href=&#34;https://getaround.com/&#34;&gt;Getaround&lt;/a&gt; give you a way to travel at your destination. Beyond these also exist hundreds of bespoke hotel, car rental, and airline websites.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dynamically Resizing Queue</title>
+      <link>https://malekoa.com/posts/dynamic-resize-queue/</link>
+      <pubDate>Wed, 26 Jun 2024 23:17:35 -0700</pubDate>
+      <guid>https://malekoa.com/posts/dynamic-resize-queue/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;This post builds on the &lt;a href=&#34;https://malekoa.com/posts/event-queue-service&#34;&gt;Event Queue Service&lt;/a&gt; post I made earlier. In that post, I made an event queue service that could handle up to a fixed number of events. In this post, I will upgrade my queue implementation to dynamically resize itself when it reaches its capacity.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the previous post, I made an event queue service using a ring buffer. The ring buffer had a fixed size, and when it reached its capacity, it would not accept any more events. In this post, I&amp;rsquo;ll be making some changes to the queue implementation to allow it to resize itself when it reaches its capacity. I&amp;rsquo;ll be taking inspiration from the &lt;code&gt;ArrayList&lt;/code&gt; class in Java, which doubles in size when it reaches its capacity. This is going to be a short post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building an Event Queue Service Using Go</title>
+      <link>https://malekoa.com/posts/event-queue-service/</link>
+      <pubDate>Sat, 15 Jun 2024 19:26:35 -0700</pubDate>
+      <guid>https://malekoa.com/posts/event-queue-service/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;This post documents the process of developing an event queue service in Go. To see the full code, check out the &lt;a href=&#34;https://github.com/malekoa/event-queue-service&#34;&gt;Github repository&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;When working with microservices, it&amp;rsquo;s important to keep your services decoupled. This makes it easier to change one component without affecting the others. But your services still need to communicate with each other. One way to do this is to have components send messages directly to each other. But this can lead to tight coupling between components, making it harder to change one component without affecting the others.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

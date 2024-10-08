@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.134.2">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Case Study: UX/UI Design of a Travel Companion Super App &middot; malekoa.com</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://malekoa.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://malekoa.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://malekoa.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://malekoa.com/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" layout-reverse">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://malekoa.com/"><h1>malekoa.com</h1></a>
+      <p class="lead">
+       Notes on things I&#39;m working on. 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://malekoa.com/">Home</a> </li>
+        <li><a href="/about"> About </a></li><li><a href="https://www.github.com/malekoa/"> GitHub </a></li><li><a href="https://www.linkedin.com/in/malekoa/"> LinkedIn </a></li>
+      </ul>
+    </nav>
+
+    <p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. This blog was made with <a href="https://gohugo.io/">Hugo</a>.</p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Case Study: UX/UI Design of a Travel Companion Super App</h1>
+  <time datetime=2024-08-16T10:21:35-0700 class="post-date">Fri, Aug 16, 2024</time>
+  <blockquote>
+<p>This post is related to an assignment for my SOEN 357 class.</p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<p>Traveling is complicated. Figuring out how to get there, figuring out where to stay, and figuring out how to get around is tough. Some might even say it takes the joy out of traveling.</p>
+<p>The thing is, each of these problems have solutions. Services like <a href="https://www.google.com/travel/flights">Google Flights</a> and <a href="https://www.skyscanner.ca/">Skyscanner</a> exist for finding flights. <a href="https://www.airbnb.ca/">Airbnb</a> and <a href="https://www.vrbo.com/">Vrbo</a> can help you find a place to stay. Finally, services like <a href="https://turo.com/ca/en">Turo</a> and <a href="https://getaround.com/">Getaround</a> give you a way to travel at your destination. Beyond these also exist hundreds of bespoke hotel, car rental, and airline websites.</p>
+<p>The problem with using these services is that they&rsquo;re all disjoint. You have to keep track of payments, timelines, and requirements for each of them on your own. Even if you just use the three most popular, that&rsquo;s still three things to keep track of. Not an easy task! But you know what&rsquo;s easier than keeping track of three things? Keeping track of one thing.</p>
+<h2 id="understanding-the-problem">Understanding the Problem</h2>
+<p>The fragmented experience created by juggling multiple isolated services is stressful and error-prone. Creating a super-app that manages all three would turn effortless this complicated problem, letting you focus on what really matters: enjoying your trip and accomplishing your travel goals.</p>
+<p>A super-app would thus have to handle three things:</p>
+<ol>
+<li><strong>Travel to destination from origin</strong> &ndash; Getting there is important.</li>
+<li><strong>Lodging at destination</strong> &ndash; Staying there is important.</li>
+<li><strong>Travel throughout the destination</strong> &ndash; Getting around once you&rsquo;re there is important.</li>
+</ol>
+<p>To research the problem, I created a set of wireframes inspired by the previously mentioned services and produced an aggregated workflow for the three processes. These wireframes are later used during user-interviews to get user insights and produce high quality personas that inform the creation of the final high-fidelity mockups.</p>
+<h3 id="travel-to-destination-from-origin">Travel to destination from origin</h3>
+<p>This is more or less a solved problem. Services like Google Flights and Skyscanner exist that aggregate flights and figure out how to efficiently and inexpensively get you where you&rsquo;re going.</p>
+<p>The user-flow for something like this is quite standard. First the user should define their origin and destination. Next, they should define their travel timeline. Finally, they should define the size of their travel party. The following diagram shows this user-flow.</p>
+<p><img src="travel.webp" alt="User-flow - Travel Section">
+<em>Figure 1: Flight search user-flow.</em></p>
+<p>Once the user has declared their information, they should be given a list of flights to choose from for both travel to and from the destination.</p>
+<p><img src="confirm_flights.webp" alt="User-flow - Flight picker">
+<em>Figure 2: Flight picker user-flow.</em></p>
+<h3 id="booking-lodging">Booking Lodging</h3>
+<p>Next, once the user has booked their flights, they should book their lodging. Services like Airbnb and Vrbo display a map to their users with pins placed on places they can stay. The super-app should have a similar workflow.</p>
+<p>It&rsquo;s possible that users already have a place to stay at their destination, perhaps with a friend or relative. Thus, the option should exist to skip this step.</p>
+<p><img src="lodging_picker.webp" alt="User-flow - Lodging picker">
+<em>Figure 3: Lodging picker user-flow</em></p>
+<h3 id="renting-a-vehicle">Renting a Vehicle</h3>
+<p>Finally, the user is likely going to want to get around their destination. Services like Turo and Getaround let you search by make and destination. We already know the user&rsquo;s destination, so we don&rsquo;t need to ask them for that. Make, however, should be asked for.</p>
+<p><img src="vehicle_picker.webp" alt="User-flow - Vehicle picker">
+<em>Figure 4: Vehicle picker user-flow</em></p>
+<h3 id="summary-and-confirmation">Summary and Confirmation</h3>
+<p>The user should be shown a summary of their choices and the final price they&rsquo;ll be paying. Also, we can display travel visa requirements based on the user&rsquo;s supplied government ID. Finally, we can display a call to action that points the user to the Explore tab which lets them book activities at their destination.</p>
+<p><img src="travel_confirmation.webp" alt="User-flow - Travel Confirmation Screen">
+<em>Figure 5: Travel confirmation user-flow</em></p>
+<h3 id="handling-user-information">Handling User Information</h3>
+<p>Some of the steps discussed in the previous section require the user&rsquo;s information. When the user creates their account, they should be prompted to complete their profile. The profile section would contain the user&rsquo;s government ID and a payment method which would allow the app to process the user&rsquo;s requests.</p>
+<p><img src="profile.webp" alt="User-flow - Profile">
+<em>Figure 6: Profile completion user-flow.</em></p>
+<h3 id="explore">Explore!</h3>
+<p>Once the user has booked their flights, lodging, and vehicle rental, they are directed to the app&rsquo;s explore tab. This tab allows them to register for activities at their destination. Generally, when people book travel they have some activities in mind, but they haven&rsquo;t planned every day out. The explore tab gives them a place to plan other outings besides the ones they already have in mind.</p>
+<p><img src="explore_plan.webp" alt="User-flow - Explore tab">
+<em>Figure 7: Explore tab user-flow.</em></p>
+<p>Once the user has selected an activity, they should be given a registration page that asks them for their information and books their registration for the activity.</p>
+<p><img src="activity_booking.webp" alt="User-flow - Activity confirmation">
+<em>Figure 7: Activity booking user-flow.</em></p>
+<h3 id="past-trips">Past Trips</h3>
+<p>The user should also be able to browse trips they have been on using the app. It should show their flight information, their lodging information, and their vehicle rental information as well.</p>
+<p><img src="past_trips.webp" alt="User-flow - Past Trip user flow">
+<em>Figure 7: Past trip user-flow.</em></p>
+<h3 id="support">Support</h3>
+<p>The user should also be able to ask for support during their travels. This section was inspired by <a href="https://www.graebel.com/">Graebel</a>&rsquo;s support form. There should be a section for emergency support that is processed with priority.</p>
+<p><img src="emergency.webp" alt="User-flow - Emergency">
+<em>Figure 7: Support user-flow.</em></p>
+<h2 id="research-and-analysis">Research and Analysis</h2>
+<p>The following interview questions were asked to 3 participants:</p>
+<h3 id="interview-questions">Interview Questions</h3>
+<ol>
+<li>What challenges do you face when using separate apps for booking flights, lodging, and vehicle rentals?</li>
+<li>Would having all your travel details (flights, lodging, vehicle) in one app reduce your travel planning stress?</li>
+<li>Do you prefer to use a map-based interface to browse lodging options, or would a list of filtered results be more helpful?</li>
+<li>Would you like the app to suggest travel destinations or activities based on your travel history?</li>
+<li>Have you ever needed urgent support while traveling?</li>
+</ol>
+<h3 id="interview-results">Interview Results</h3>
+<p>Travelers seemed to agree that having multiple bookings is stressful and that having an app manage your bookings could improve their travel experience. Duplicate information and inconsistent synchronization between different booking services were also listed as challenges faced when using multiple services.</p>
+<p><img src="challenges.webp" alt="Challenges">
+<em>Figure 8: Challenges faced by travelers.</em></p>
+<p>All respondents agreed that a single app would reduce their stress at time of travel. Most agreed that a map-based interface was superior for browsing for lodging. Most seemed not interested in having travel suggestions made for them. Also, most found that having urgent support was important.</p>
+<p><img src="pie_charts.webp" alt="Travel Stress">
+<em>Figure 9: Pie charts corresponding to the survey results.</em></p>
+<p>As a follow up to the survey, users were shown the previously shown wireframes. While the overall satisfaction with the design was high, the participants expressed a desire to make improvements to the visual style of the application.</p>
+<h4 id="key-findings">Key Findings</h4>
+<ul>
+<li>Users appreciated the logical organization and user flow of the interface, but felt that making the design more refined could be of benefit.</li>
+<li>The use of &ldquo;boxy&rdquo; elements and hard lines was deemed too rigid. Participants expressed a preference for more whitespace and gentler visual cues to guide the user&rsquo;s attention.</li>
+</ul>
+<h4 id="recommendations">Recommendations</h4>
+<ul>
+<li>Incorporate more nuanced typography and graphic elements to create a more modern, sophisticated
+look.</li>
+<li>Adjust the layout to provide greater separation between key cards and features, reducing visual
+clutter and improving readability.</li>
+</ul>
+<h3 id="personas-developed">Personas Developed</h3>
+<p>Based on the interview results, the following personas were developed to inform the creation of high-fidelity mockups:</p>
+<h4 id="persona-1">Persona 1</h4>
+<p><img src="persona1.webp" alt="Jessica James">
+<em>Figure 9: Persona 1.</em></p>
+<h4 id="persona-2">Persona 2</h4>
+<p><img src="persona2.webp" alt="Carlos Cruz">
+<em>Figure 9: Persona 2.</em></p>
+<h2 id="redesign-and-high-fidelity-mockups">Redesign and High Fidelity Mockups</h2>
+<p>Through user interviews and feedback sessions, I gathered valuable insights into what users were
+looking for in our service&rsquo;s visual design. Key takeaways included a desire for a sophisticated and
+polished aesthetic, as well as a preference for ample whitespace to create a clean and uncluttered
+experience.</p>
+<p>To meet these requirements, I decided on a light-colored color palette that would provide a
+calming and serene atmosphere. My goal was to create a subtle yet effective visual identity that
+would guide users through the service without overwhelming them.</p>
+<h3 id="color-scheme">Color Scheme</h3>
+<p>After careful consideration, I selected a palette of muted colors that complement each other
+beautifully. The result is a cohesive look that features:</p>
+<ul>
+<li>A soft artichoke green tone</li>
+<li>Two variations of yellow crayola: a creamy green and a pale yellow</li>
+<li>A delicate champagne</li>
+<li>A light cornsilk shade that adds warmth to the overall design</li>
+</ul>
+<p><img src="tripfellow_color_palette.webp" alt="color_palette">
+<em>Figure 10: Color Palette</em></p>
+<h3 id="logo">Logo</h3>
+<p>As I continued to develop the service, I turned my attention to creating a logo that would
+effectively represent the travel app and its unique value proposition. Given the app&rsquo;s purpose,
+incorporating an airplane seemed like a logical and intuitive decision.</p>
+<p>To further reinforce the connection between the airplane and the global nature of travel, I
+surrounded it with a dotted circle. This design element serves as a visual representation of the
+planet, symbolizing the app&rsquo;s ability to handle all aspects of travel planning. The use of a dotted
+circle also conveys a sense of unity and wholeness, implying that the app is comprehensive and
+integrated.</p>
+<p><img src="logos.webp" alt="color_palette">
+<em>Figure 11: Logo in different colors</em></p>
+<h3 id="mockups">Mockups</h3>
+<h4 id="onboarding">Onboarding</h4>
+<p>The onboarding process should prompt the user to provide all the basic information that is required to set up their accounts. To further simplify the process, it should prompt the user to create an account using a social authentication method. There are many providers such as Facebook or Sign In with Apple. Sign In with Apple is particularly powerful as it integrates with their whole ecosystem, making it easy to sign in from any Apple device. For this example, I&rsquo;m using Google Auth.</p>
+<p><img src="./onboarding.webp" alt="onboarding">
+<em>Figure 12: Onboarding screens</em></p>
+<h4 id="planning-a-trip">Planning a Trip</h4>
+<p>The process for planning a trip is almost unchanged from the original wireframes.</p>
+<ol>
+<li><strong>Selecting a flight</strong>: The user should be able to select an outbound flight and a return flight. I learned from user surveys that the users want less clutter. To achieve a more streamlined look, I removed the borders from the flight cards and instead changed their background to contrast with the main background.
+<img src="./plan_1.webp" alt="plan_1">
+<em>Figure 12: Selecting flights</em></li>
+<li><strong>Choosing Lodging</strong>: The user should be able to select a place to stay while they&rsquo;re at their destination. From user feedback, I learned that some users like having a list view with filters. Thus, we provide a combination of the two. The user should also be able to view pictures and information related to the lodging they&rsquo;re choosing.
+<img src="./plan_2.webp" alt="plan_2">
+<em>Figure 13: Selecting lodging</em></li>
+<li><strong>Choosing a Vehicle</strong>: The user should be able to select a vehicle to use while they&rsquo;re at their destination. Like lodging, the user should be able to view pictures and information related to the vehicle they&rsquo;re choosing.
+<img src="./plan_3.webp" alt="plan_3">
+<em>Figure 14: Selecting a vehicle</em></li>
+<li><strong>Booked Screen</strong>: The user should be shown a success screen when they&rsquo;ve successfully booked.
+<img src="./plan_4.webp" alt="plan_3">
+<em>Figure 15: Success screen</em></li>
+</ol>
+<h4 id="exploring-the-destination">Exploring The Destination</h4>
+<p>Users should be able to book activities that are at their destination using our app. The process is similar to booking a hotel or renting a car: the user should be shown their options. Then, when they select an option, they should be shown pictures related to the activity and also information related to the activity.</p>
+<p><img src="./explore_1.png" alt="exploring_the_destination">
+<em>Figure 16: Booking an activity</em></p>
+<p>Then, the user should be able to get tickets for their whole group if necessary, and be shown a success screen.</p>
+<p><img src="./explore_2.png" alt="exploring_the_destination_2">
+<em>Figure 17: Booking an activity</em></p>
+<h4 id="requesting-support">Requesting Support</h4>
+<p>The support screen is essentially unchanged.</p>
+<p><img src="./support.webp" alt="support">
+<em>Figure 18: Requesting support</em></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In conclusion, a travel companion super app offers an elegant solution to the fragmented nature of the current travel experience. By integrating all these services, from flight booking, reservation of lodging and vehicles, into a single platform, this app addresses core pain points faced by travelers. Throughout the design process, users highlighted the need for a streamlined and visually appealing interace that minimizes stress and enhances their travel experience. Wireframes were used to survey potential users on their needs, and high-fidelity mockups were created with their feedback in mind. The new design focuses on simplicity, cohesiveness, and usablility. The sophisticated color palette, refined typography, and spacious layout contribute to an aesthetically pleasing interface that prioritizes user comfort and ease of use.</p>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>
